@@ -32,10 +32,12 @@ public class Plano {
 		this.nomePlano = nomePlano;
 		this.precoPlano = precoPlano;
 		this.descricao = descricao;
-		this.disponivel = disponivel;
+		this.disponivel = true;
 	}
 
-
+	public void desativar() {
+		this.disponivel = false;
+	}
 
 	public Long getIdPlano() {
 		return idPlano;
