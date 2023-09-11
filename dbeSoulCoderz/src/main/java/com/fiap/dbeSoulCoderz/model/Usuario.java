@@ -1,5 +1,7 @@
 package com.fiap.dbeSoulCoderz.model;
 
+import com.fiap.dbeSoulCoderz.dto.DadosRequisicaoUsuario;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -35,6 +37,18 @@ public class Usuario {
 		this.telefoneUsuario = telefoneUsuario;
 		this.cpfUsuario = cpfUsuario;
 		this.ativoUsuario = ativoUsuario;
+	}
+	
+	
+
+	public Usuario(DadosRequisicaoUsuario requisicao) {
+		super();
+		this.nomeUsuario = requisicao.nomeUsuario();
+		this.emailUsuario = requisicao.emailUsuario();
+		this.senhaUsuario = requisicao.senhaUsuario();
+		this.telefoneUsuario = requisicao.telefoneUsuario();
+		this.cpfUsuario = requisicao.cpfUsuario();
+		this.ativoUsuario = true;
 	}
 
 	public Long getIdUsuario() {

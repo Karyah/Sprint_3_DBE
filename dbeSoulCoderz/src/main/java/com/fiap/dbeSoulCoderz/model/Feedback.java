@@ -1,5 +1,7 @@
 package com.fiap.dbeSoulCoderz.model;
 
+import com.fiap.dbeSoulCoderz.dto.DadosRequisicaoFeedback;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,6 +22,12 @@ public class Feedback {
 	public Feedback() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	
+	public Feedback(DadosRequisicaoFeedback requisicao) {
+		this.nomeFeedback = requisicao.nomeFeedback();
+		this.tipoFeedback = requisicao.tipoFeedback();
+		this.ativoFeedback = true;
 	}
 
 	public Feedback(Long idFeedback, String nomeFeedback, String tipoFeedback, boolean ativoFeedback) {
