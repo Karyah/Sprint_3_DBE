@@ -13,8 +13,16 @@ public class SecurityConfigurations {
 
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		return http.csrf().disable()
-		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().build();
+		http.authorizeHttpRequests().	
+			anyRequest().authenticated().
+		and().
+		formLogin().
+			loginPage("/login").permitAll().
+		and().
+			logout().
+				permitAll();
+		http.csrf().disable();
+		return http.build();
 	
 	}
 }
