@@ -5,20 +5,18 @@
 	</head>
 	<body> 
 		<div class= "container">
-		<div class="card mb-3" th:each="plano: ${planos}">
-		<b><div class="card-header" th:text=${plano.nomePlano}></div></b>	
+		<div class="card mb-3" th:each="suporte: ${suportes}">
+		<b><div class="card-header" th:text=${suporte.nomeRequisicaoSup}></div></b>	
 			<div class="card-body">
                     <div class="row">
                         <div class="col-12 col-sm-8 mb-3">
 			
 							<div>  	
-								<p>	<b>Valor: </b><span th:text=${plano.precoPlano}></span></p>			
-							</div>
-							
-							 <p><b> Descrição: </b></p>
-							<div>
-								<textarea rows=8 th:text=${plano.descricao}></textarea>
-							</div>
+								<p>	<b>Email: </b><span th:text=${suporte.emailRequisicaoSup}></span></p>			
+							</div>		
+							<div>  	
+								<p>	<b>Solucionado: </b><span th:text=${suporte.solucionado}></span></p>			
+							</div>		
 					
 						</div>
 					</div>

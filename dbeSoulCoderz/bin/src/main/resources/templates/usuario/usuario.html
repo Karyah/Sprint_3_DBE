@@ -1,0 +1,44 @@
+<html>
+	<head>
+	<meta charset = "UTF-8">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	</head>
+	<body> 
+		<div class= "container">
+		<div class="card mb-3" th:object="${usuario}">
+		<b><div class="card-header" th:text=${usuario.nomeUsuario}></div></b>	
+			<div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-sm-8 mb-3">
+			
+							<div>  	
+								<p>	<b>Nome: </b><span th:text=${usuario.nomeUsuario}></span></p>			
+							</div>
+							
+							<div>  	
+								<p>	<b>Email: </b><span th:text=${usuario.emailUsuario}></span></p>			
+							</div>
+							
+							<div>  	
+								<p>	<b>Senha: </b><span th:text=${usuario.senhaUsuario}></span></p>			
+							</div>
+							
+							<div>  	
+								<p>	<b>Telefone: </b><span th:text=${usuario.telefoneUsuario}></span></p>			
+							</div>
+							
+							<div>  	
+								<p>	<b>Cpf: </b><span th:text=${usuario.cpfUsuario}></span></p>			
+							</div>
+							
+							
+					
+						</div>
+					</div>
+			</div>
+		</div>
+        </div>
+	
+	
+	</body>
+</html>

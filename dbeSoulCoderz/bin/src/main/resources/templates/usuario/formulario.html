@@ -1,0 +1,53 @@
+<html>
+	<head>
+	<meta charset = "UTF-8">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	</head>
+	<body> 
+	
+		
+		<div class= "container">		
+		
+		<div class="p-4 mb-2 bg-body-tertiary rounded-3">
+			<div class="container-fluid py-5">
+				<h1 class="display-5 fw-bold">Cadastro</h1> 
+			</div>
+		</div>
+		  <div>
+       		<form class="card-body" action="/usuario/novo" method="post">
+     
+       			<div class="form-group">
+       				<label for="nomeUsuario">Nome</label>
+       				<input class="form-control" name="nomeUsuario">
+       			</div>
+       			
+       			<div class="form-group">
+       				<label for="emailUsuario">Email</label>
+       				<input class="form-control" name="emailUsuario">
+       			</div>
+       			
+       			<div class="form-group">
+       				<label for="senhaUsuario">Senha</label>
+       				<input class="form-control" type=password name="senhaUsuario">
+       			</div>
+       			
+       			<div class="form-group"> 
+       				<label for="telefoneUsuario">Telefone</label>
+       				<input class="form-control" name="telefoneUsuario">
+       			</div>
+       			
+       			<div class="form-group">
+       				<label for="cpfUsuario">CPF</label>
+       				<input class="form-control" name="cpfUsuario">
+       			</div>
+       			
+    			
+       			<button class="btn btn-primary mt-3" type="submit">Cadastrar</button>
+       		</form>
+       		</div>
+       			
+       </div>
+
+	</body>
+</html>
+          	
