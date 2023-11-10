@@ -29,7 +29,7 @@ public class PlanoController {
 		mv.addObject("planos",planos);
 		return mv;
 	}
-	*/
+	*/ 
 	
 	@GetMapping
 	public ModelAndView planos() {

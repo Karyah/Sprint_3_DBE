@@ -1,16 +1,22 @@
 package com.fiap.dbeSoulCoderz.model;
 
+import java.util.Collection;
+import java.util.List;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 import com.fiap.dbeSoulCoderz.dto.DadosRequisicaoUsuario;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+
 
 @Entity(name="Usuario")
 @Table(name="Usuario")
-public class Usuario {
+public class Usuario implements UserDetails{
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -21,6 +27,7 @@ public class Usuario {
 	private String telefoneUsuario;
 	private String cpfUsuario;
 	private boolean ativoUsuario;
+	
 	
 	public Usuario() {
 		super();
@@ -105,6 +112,47 @@ public class Usuario {
 	
 	public void setAtivoUsuario(boolean ativoUsuario) {
 		this.ativoUsuario = ativoUsuario;
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+	}
+
+	@Override
+	public String getPassword() {
+		// TODO Auto-generated method stub
+		return this.senhaUsuario;
+	}
+
+	@Override
+	public String getUsername() {
+		// TODO Auto-generated method stub
+		return this.emailUsuario;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 	
