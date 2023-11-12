@@ -6,14 +6,15 @@
 		
 	<nav class="navbar navbar-expand bg-body-tertiary d-flex justify-content-between mb-3">
 				<div class="navbar-nav">		
-					<a class="nav-link" href="/chat"> Chat</a>
-					<a class="nav-link" href="/feedback"> <b> Feedback</b></a>
-					<a class="nav-link" href="/suporte">Suporte</a>
-					<a class="nav-link" href="/feedback/formulario">  <button> Novo Feedback</button></a>
+					<a class="nav-link mt-2" href="/chat"> Chat</a>
+					<a class="nav-link mt-2" href="/feedback"> <b> Feedback</b></a>
+					<a class="nav-link mt-2" href="/suporte">Suporte</a>
+					<a class="nav-link" href="/feedback/formulario">  <button class="btn btn-primary h-0 d-inline-block"> Novo Feedback</button></a>
 				</div>
 				</nav>
 				
 		<div class= "container">
+			<div th:replace="~{base :: titulo('Feedback')}"></div>
 		<div class="card mb-3" th:each="feedback: ${feedbacks}">
 		<b><div class="card-header" th:text=${feedback.nomeFeedback}></div></b>	
 			<div class="card-body">
@@ -22,7 +23,7 @@
                     <div class="row">
                         
 			
-							<div>  	
+							<div class="col-md-7">  	
 								<p>	<b>Tipo de Feedback: </b><span th:text=${feedback.tipoFeedback}></span></p>			
 							</div>
 										

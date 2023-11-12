@@ -35,7 +35,6 @@ public class SecurityConfigurations	 {
 						.loginPage("/login").defaultSuccessUrl("/home", true)
 				.permitAll().and().logout().permitAll();
 		
-		//http.authorizeHttpRequests().requestMatchers("usuario/formulario").permitAll().anyRequest().authenticated();
 		http.csrf().disable().
 			userDetailsService(userService);
 		return http.build();
@@ -53,6 +52,4 @@ public class SecurityConfigurations	 {
 	        return new BCryptPasswordEncoder();    
 	}
 	
-
-
 }

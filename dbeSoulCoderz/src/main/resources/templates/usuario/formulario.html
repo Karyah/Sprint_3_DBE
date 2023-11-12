@@ -13,11 +13,7 @@
 		
 		<div class= "container">		
 		
-		<div class="p-4 mb-2 bg-body-tertiary rounded-3">
-			<div class="container-fluid py-5">
-				<h1 class="display-5 fw-bold">Cadastro</h1> 
-			</div>
-		</div>
+		<div th:replace="~{base :: titulo('Cadastro')}"></div>
 		  <div>
        		<form class="card-body" action="/usuario/novo" method="post">
      

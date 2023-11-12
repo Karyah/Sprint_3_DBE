@@ -12,6 +12,7 @@
 				</div>
 		</nav> 
 		<div class= "container">
+		<div th:replace="~{base :: titulo('Solicitações de suporte')}"></div>
 		<div class="card mb-3" th:each="suporte: ${suportes}">
 		<b><div class="card-header" th:text=${suporte.nomeRequisicaoSup}></div></b>	
 			<div class="card-body">

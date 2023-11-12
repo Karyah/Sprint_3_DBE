@@ -13,6 +13,8 @@
 				</nav>
 				
 				<div class= "container">
+					
+		<div th:replace="~{base :: titulo('Planos Disponíveis')}"></div>
 		<div class="card mb-3" th:each="plano: ${planos}">
 		<b><div class="card-header" th:text=${plano.nomePlano}></div></b>	
 			<div class="card-body">

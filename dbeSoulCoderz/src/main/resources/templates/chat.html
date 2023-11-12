@@ -10,7 +10,19 @@
 					<a class="nav-link" href="/feedback">Feedback</a>
 					<a class="nav-link" href="/suporte">Suporte</a>
 				</div>
-				</nav>
-				
+	</nav>
+	<div class= "container">		
+		<div th:replace="~{base :: titulo('SoulChat')}"></div>
+		<div class="form-body">
+			<form class="card-body" method="post">
+       			<input class="form-control" name="mensagem" placeholder="Tire sua duvida com o SoulChat">
+       			<button class="btn btn-primary mt-3" type="submit">Enviar</button>
+			</form>
+       	</div>
+       		<div class="col-md-7">  	
+			<textarea rows=8 th:text=${resposta} cols="150"></textarea>		
+		</div>
+       	
+	</div>
 	</body>
 </html>
