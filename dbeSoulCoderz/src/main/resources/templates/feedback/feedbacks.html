@@ -1,15 +1,26 @@
 <html>
-	<head>
-	<meta charset = "UTF-8">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-	</head>
-	<body> 
+	<head th:replace="~{base :: head}"></head>
+	
+	<body>
+	<div th:replace="~{base :: logo}"></div>
+		
+	<nav class="navbar navbar-expand bg-body-tertiary d-flex justify-content-between mb-3">
+				<div class="navbar-nav">		
+					<a class="nav-link" href="/chat"> Chat</a>
+					<a class="nav-link" href="/feedback"> <b> Feedback</b></a>
+					<a class="nav-link" href="/suporte">Suporte</a>
+					<a class="nav-link" href="/feedback/formulario">  <button> Novo Feedback</button></a>
+				</div>
+				</nav>
+				
 		<div class= "container">
 		<div class="card mb-3" th:each="feedback: ${feedbacks}">
 		<b><div class="card-header" th:text=${feedback.nomeFeedback}></div></b>	
 			<div class="card-body">
+			
+			<div class="col-12 col-sm-8 mb-3">
                     <div class="row">
-                        <div class="col-12 col-sm-8 mb-3">
+                        
 			
 							<div>  	
 								<p>	<b>Tipo de Feedback: </b><span th:text=${feedback.tipoFeedback}></span></p>			

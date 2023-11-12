@@ -1,4 +1,4 @@
-package com.fiap.dbeSoulCoderz.infra.security;
+	package com.fiap.dbeSoulCoderz.infra.security;
 
 import javax.sql.DataSource;
 
@@ -26,12 +26,18 @@ public class SecurityConfigurations	 {
 
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		http.authorizeHttpRequests().
-
-				anyRequest().authenticated().and().formLogin()
-						.loginPage("/login").defaultSuccessUrl("/planos", true)
+		http.
+	
+		authorizeHttpRequests()
+		.requestMatchers("usuario/formulario")
+			.permitAll().and().authorizeHttpRequests().requestMatchers("usuario/novo").permitAll()
+		.anyRequest().authenticated().and().formLogin()
+						.loginPage("/login").defaultSuccessUrl("/home", true)
 				.permitAll().and().logout().permitAll();
-		http.csrf().disable().userDetailsService(userService);
+		
+		//http.authorizeHttpRequests().requestMatchers("usuario/formulario").permitAll().anyRequest().authenticated();
+		http.csrf().disable().
+			userDetailsService(userService);
 		return http.build();
 	}
 
@@ -39,6 +45,7 @@ public class SecurityConfigurations	 {
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		auth.jdbcAuthentication().dataSource(dataSource).passwordEncoder(encoder);
+		
 	}
 
 	@Bean
