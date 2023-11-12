@@ -2,10 +2,10 @@ package com.fiap.dbeSoulCoderz.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
+@RequestMapping("/chat")
 @Controller
-@RequestMapping("/empresa")
-public class EmpresaController {
+public class ChatController {
 
+	
 }
